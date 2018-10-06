@@ -3,14 +3,30 @@
     <meta charset="UTF-8">
     <title>Zhufeng</title>
     <style>
-        
-    </style>    
+        .switch {
+            -webkit-appearance: none;
+            width: 50px;
+            height: 30px;
+            border: 1px solid #dfdfdf;
+            height: 30px;
+            position: relative;
+
+        }
+        .switch:before {
+          content: '';
+          position: absolute;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          box-shadow: 1px;
+        }
+    </style>
   </head>
   <body>
     <div class="app">
       <input type="checkbox" />
       <p>关</p>
-    </div>    
+    </div>
 
   </body>
 
