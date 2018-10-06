@@ -4,30 +4,55 @@
     <title>Zhufeng</title>
     <style>
         .switch {
-            -webkit-appearance: none;
+           -webkit-appearance:none;
             width: 50px;
-            height: 30px;
             border: 1px solid #dfdfdf;
-            height: 30px;
+            border-radius: 30px;
+            height: 32px;
             position: relative;
+            outline: none;
+            transition: all 0.2s linear;
 
+            /* background: #7264ff;  */
+        }
+        .switch:checked {
+          transition: all 0.2s linear;
+          box-shadow: #343cff 0 0 16px 16px inset;
         }
         .switch:before {
           content: '';
+          left: 0;
+          top: 0;
           position: absolute;
           width: 30px;
           height: 30px;
           border-radius: 50%;
-          box-shadow: 1px;
+          box-shadow: 1px 1px 2px 0 #dfdfdf;
+          background: #fff;
+          transition: all 0.2s linear;
+        }
+        .switch:checked:before {
+          left: 20px;
+          transition: all 0.2s linear;
         }
     </style>
   </head>
   <body>
     <div class="app">
-      <input type="checkbox" />
-      <p>关</p>
+      <div>
+        <input type="checkbox" class='switch'/>
+        <p class='text'>关</p>
+      </div>
     </div>
 
+    <script>
+        let btn = document.querySelector('.switch');
+        let text = document.querySelector('.text');
+        btn.addEventListener('change', function(event) {
+          text.innerHTML = event.target.checked ? '开' : '关';
+        }, false);
+
+     </script>
   </body>
 
 
